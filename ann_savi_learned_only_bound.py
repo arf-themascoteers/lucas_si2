@@ -19,6 +19,8 @@ class ANNSAVILearnedOnlyBound(nn.Module):
             nn.Linear(10, 1)
         )
 
+        self.alpha = 100
+
     def forward(self, x, soc):
         savi_hat = self.savi(x)
         soc_hat = self.linear1(savi_hat)
