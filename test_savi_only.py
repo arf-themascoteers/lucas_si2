@@ -6,5 +6,5 @@ if __name__ == "__main__":
         ["savi"]
     ]
     algorithms = ["ann_savi_only"]
-    c = Evaluator(prefix="test", folds=10, algorithms=algorithms, column_groups=column_groups)
+    c = Evaluator(prefix="ann_savi_only", folds=10, algorithms=algorithms, column_groups=column_groups)
     c.process()
