@@ -12,6 +12,10 @@ from ann_savi_rev_10 import ANNSAVIRev10
 from ann_savi import ANNSAVI
 from ann_savi_bound import ANNSAVIBound
 
+from ann_savi_only import ANNSAVIOnly
+from ann_savi_learned_only import ANNSAVILearnedOnly
+from ann_savi_learned_only_bound import ANNSAVILearnedOnlyBound
+
 
 def get_ann_by_name(algorithm):
     if algorithm == "ann_savi_rev_0":
@@ -40,5 +44,14 @@ def get_ann_by_name(algorithm):
         return ANNSAVI
     elif algorithm == "ann_savi_bound":
         return ANNSAVIBound
+
+    elif algorithm == "ann_savi_only":
+        return ANNSAVIOnly
+    elif algorithm == "ann_savi_learned_only":
+        return ANNSAVILearnedOnly
+    elif algorithm == "ann_savi_learned_only_bound":
+        return ANNSAVILearnedOnlyBound
+
+
 
 
