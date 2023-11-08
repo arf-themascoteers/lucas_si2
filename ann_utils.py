@@ -9,6 +9,7 @@ from ann_savi_rev_7 import ANNSAVIRev7
 from ann_savi_rev_8 import ANNSAVIRev8
 from ann_savi_rev_9 import ANNSAVIRev9
 from ann_savi_rev_10 import ANNSAVIRev10
+from ann_savi import ANNSAVI
 
 
 def get_ann_by_name(algorithm):
@@ -34,5 +35,7 @@ def get_ann_by_name(algorithm):
         return ANNSAVIRev9
     elif algorithm == "ann_savi_rev_10":
         return ANNSAVIRev10
+    elif algorithm == "ann_savi":
+        return ANNSAVI
 
 
