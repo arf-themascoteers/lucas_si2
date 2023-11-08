@@ -13,7 +13,7 @@ class ANNSAVIBound(nn.Module):
 
         self.L = nn.Parameter(torch.tensor(0.5))
 
-        self.alpha = 10
+        self.alpha = 100
 
         self.criterion_soc = torch.nn.MSELoss(reduction='mean')
 

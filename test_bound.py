@@ -5,6 +5,6 @@ if __name__ == "__main__":
     column_groups = [
         spec_utils.get_wavelengths()
     ]
-    algorithms = ["ann_savi"]
-    c = Evaluator(prefix="test", folds=10, algorithms=algorithms, column_groups=column_groups)
+    algorithms = ["ann_savi_bound"]
+    c = Evaluator(prefix="test_bound", folds=10, algorithms=algorithms, column_groups=column_groups)
     c.process()
