@@ -6,5 +6,5 @@ if __name__ == "__main__":
         spec_utils.get_wavelengths() + ["savi"]
     ]
     algorithms = [f"ann_savi_rev_{i}" for i in range(11)]
-    c = Evaluator(prefix="t", folds=10, algorithms=[algorithms], column_groups=column_groups)
+    c = Evaluator(prefix="t", folds=10, algorithms=algorithms, column_groups=column_groups)
     c.process()
