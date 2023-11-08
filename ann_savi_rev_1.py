@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 
 
-class ANNSAVIRev(nn.Module):
+class ANNSAVIRev1(nn.Module):
     def __init__(self, device, input_size, X_columns, y_column):
         super().__init__()
         self.device = device
@@ -24,7 +24,7 @@ class ANNSAVIRev(nn.Module):
             nn.Linear(10, 1)
         )
 
-        self.alpha = 0.5
+        self.alpha = 0.1
         self.criterion_soc = torch.nn.MSELoss(reduction='sum')
         self.criterion_savi = torch.nn.MSELoss(reduction='sum')
 

@@ -41,7 +41,7 @@ class ANNVanilla:
                 batch_number += 1
                 #print(f'Epoch:{epoch + 1} (of {self.epochs}), Batch: {batch_number} of {n_batches}, Loss:{loss.item():.6f}')
 
-        torch.save(self.model, "ann.pt")
+        #torch.save(self.model, "ann.pt")
 
     def test(self):
         batch_size = 30000
