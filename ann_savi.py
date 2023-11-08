@@ -1,6 +1,5 @@
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
 
 
 class ANNSAVI(nn.Module):
@@ -12,8 +11,6 @@ class ANNSAVI(nn.Module):
         self.y_column = y_column
 
         self.L = nn.Parameter(torch.tensor(0.5))
-
-        self.alpha = 10
 
         self.criterion_soc = torch.nn.MSELoss(reduction='mean')
 
