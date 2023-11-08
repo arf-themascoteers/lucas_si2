@@ -12,17 +12,38 @@ class ANNSAVIRev(nn.Module):
 
         self.L = nn.Parameter(torch.tensor(0.5))
 
-        self.linear1 = nn.Sequential(
-            nn.Linear(input_size+1, 30),
+        self.input_to_soc = nn.Sequential(
+            nn.Linear(input_size-1, 30),
             nn.LeakyReLU(),
             nn.Linear(30, 1)
         )
 
-    def forward(self, x):
-        savi = self.savi(x)
-        x = torch.cat((x, savi), dim=1)
-        x = self.linear1(x)
-        return x.reshape(-1)
+        self.inputsoc_to_savi = nn.Sequential(
+            nn.Linear(1, 10),
+            nn.LeakyReLU(),
+            nn.Linear(10, 1)
+        )
+
+        self.alpha = 0.5
+        self.criterion_soc = torch.nn.MSELoss(reduction='sum')
+        self.criterion_savi = torch.nn.MSELoss(reduction='sum')
+
+    def forward(self, x, soc):
+        #savi_index = self.X_columns.index("savi")
+        base_x = x[:,0:-1]
+        savi_x = x[:,-1]
+
+        soc_hat = self.input_to_soc(base_x)
+        savi_hat = self.inputsoc_to_savi(soc_hat)
+
+        soc_hat = soc_hat.reshape(-1)
+        savi_hat = savi_hat.reshape(-1)
+
+        loss_soc = self.criterion_soc(soc_hat, soc)
+        loss_savi = self.criterion_savi(savi_hat, savi_x)
+        loss = loss_soc * (1-self.alpha) + loss_savi * self.alpha
+
+        return soc_hat, savi_hat, loss
 
     def savi(self,x):
         nir_index = self.X_columns.index("vnir4")

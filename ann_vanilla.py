@@ -25,7 +25,6 @@ class ANNVanilla:
     def train(self):
         self.model.train()
         optimizer = torch.optim.Adam(self.model.parameters(), lr=0.01, weight_decay=0.001)
-        criterion = torch.nn.MSELoss(reduction='sum')
         n_batches = int(self.train_dataset.size()/self.batch_size) + 1
         batch_number = 0
         loss = None
@@ -35,9 +34,7 @@ class ANNVanilla:
             for (x, y) in dataloader:
                 x = x.to(self.device)
                 y = y.to(self.device)
-                y_hat = self.model(x)
-                y_hat = y_hat.reshape(-1)
-                loss = criterion(y_hat, y)
+                y_hat, additional, loss = self.model(x, y)
                 loss.backward()
                 optimizer.step()
                 optimizer.zero_grad()
@@ -54,7 +51,7 @@ class ANNVanilla:
         for (x, y) in dataloader:
             x = x.to(self.device)
             y = y.to(self.device)
-            y_hat = self.model(x)
+            y_hat, additional, loss = self.model(x, y)
             y_hat = y_hat.reshape(-1)
             y_hat = y_hat.detach().cpu().numpy()
             return y_hat
