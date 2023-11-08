@@ -27,7 +27,7 @@ class ANNSAVILearnedOnlyBound(nn.Module):
         loss_l_lower = F.relu(-1*self.L)
         loss_l_upper = F.relu(self.L - 1)
         loss = loss_soc + loss_l_lower * self.alpha + loss_l_upper * self.alpha
-        print(round(loss_soc.item(), 3), round(loss_l_lower.item(), 3), round(loss_l_upper.item(), 3))
+        #print(round(loss_soc.item(), 3), round(loss_l_lower.item(), 3), round(loss_l_upper.item(), 3))
 
         return soc_hat, savi_hat, loss
 

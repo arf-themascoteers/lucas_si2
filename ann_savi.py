@@ -28,7 +28,7 @@ class ANNSAVI(nn.Module):
 
         loss_soc = self.criterion_soc(soc_hat, soc)
         loss = loss_soc
-        print(round(loss_soc.item(), 3))
+        #print(round(loss_soc.item(), 3))
 
         return soc_hat, savi, loss
 
