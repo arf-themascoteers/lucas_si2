@@ -1,0 +1,2 @@
+column_group,R2(mlr),R2(svr),R2(rf),R2(ann_simple),RMSE(mlr),RMSE(svr),RMSE(rf),RMSE(ann_simple)
+savi2,0.51,0.503,0.683,0.664,0.309,0.31,0.277,0.281
