@@ -50,7 +50,13 @@ class DSManager:
             nir = df["vnir4"]
             red = df["red"]
             return (nir - red)/(nir + red + L)*(1+L)
+        elif si == "savi2":
+            L = 35
+            nir = df["vnir4"]
+            red = df["red"]
+            return (nir - red)/(nir + red + L)*(1+L)
         return None
+
 
     def get_k_folds(self):
         kf = KFold(n_splits=self.folds)
