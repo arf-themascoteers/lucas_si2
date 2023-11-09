@@ -11,5 +11,5 @@ if __name__ == "__main__":
         spec_utils.get_wavelengths() + ["savi"] +["savi2"]
     ]
     algorithms = ["mlr", "svr", "rf"]
-    c = Evaluator(prefix="test_trad_norm", folds=10, algorithms=algorithms, column_groups=column_groups)
+    c = Evaluator(prefix="test_trad", folds=10, algorithms=algorithms, column_groups=column_groups)
     c.process()
