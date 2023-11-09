@@ -3,8 +3,13 @@ import spec_utils
 
 if __name__ == "__main__":
     column_groups = [
-        ["savi2"]
+        ["savi"],
+        ["savi2"],
+        spec_utils.get_wavelengths(),
+        spec_utils.get_wavelengths() + ["savi"],
+        spec_utils.get_wavelengths() + ["savi2"],
+        spec_utils.get_wavelengths() + ["savi"] +["savi2"]
     ]
     algorithms = ["ann_simple"]
-    c = Evaluator(prefix="test_ann_savi2_only", folds=10, algorithms=algorithms, column_groups=column_groups)
+    c = Evaluator(prefix="test_ann_simple_not_norm", folds=10, algorithms=algorithms, column_groups=column_groups)
     c.process()
