@@ -1,0 +1,2 @@
+column_group,R2(mlr),R2(svr),R2(rf),RMSE(mlr),RMSE(svr),RMSE(rf)
+savi2,0.52,0.59,0.679,7.27,6.989,6.565
