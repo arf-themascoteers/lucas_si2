@@ -1,3 +1,0 @@
-column_group,R2(mlr),R2(svr),R2(rf),RMSE(mlr),RMSE(svr),RMSE(rf)
-bands,0.613,0.44,0.691,6.892,7.564,6.513
-b1-blue-green+11,0.664,0.413,0.728,6.645,7.652,6.313
