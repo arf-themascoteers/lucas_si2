@@ -1,8 +1,0 @@
-column_group,R2(ann_simple),RMSE(ann_simple)
-savi,0.448,0.318
-savi2,0.666,0.281
-red-vnir4,0.497,0.311
-bands,0.694,0.275
-b1-blue-green+11,0.726,0.265
-b1-blue-green+11,0.723,0.268
-b1-blue-green+12,0.722,0.268

@@ -12,8 +12,7 @@ def wavelengths_itr():
 
 
 def get_wavelengths():
-    return ['b1', 'blue', 'green', 'red', 'vnir1', 'vnir2',
-     'vnir3', 'vnir4', 'vnir5', 'swir1', 'swir2', 'swir3', 'swir4']
+    return ["B01", "B02", "B03", "B04", "B05", "B06", "B07", "B08", "B8A", "B09", "B11", "B12"]
 
 
 def get_wavelengths_str():
@@ -21,4 +20,4 @@ def get_wavelengths_str():
 
 
 def get_rgb():
-    return ["blue", "green", "red"]
+    return ["B02", "B03", "B04"]

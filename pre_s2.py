@@ -20,4 +20,4 @@ df.rename(columns={
     "1610": "swir3",
     "2190": "swir4"
     }, inplace=True)
-df.to_csv("data/dataset_s2.csv")
+df.to_csv("data/lucas.csv")
