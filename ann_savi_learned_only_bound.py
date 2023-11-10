@@ -14,9 +14,9 @@ class ANNSAVILearnedOnlyBound(nn.Module):
         self.criterion_soc = torch.nn.MSELoss(reduction='mean')
 
         self.linear1 = nn.Sequential(
-            nn.Linear(1, 10),
+            nn.Linear(1, 30),
             nn.LeakyReLU(),
-            nn.Linear(10, 1)
+            nn.Linear(30, 1)
         )
 
         self.alpha = 1000

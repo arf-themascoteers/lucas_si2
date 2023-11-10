@@ -11,9 +11,9 @@ class ANNSimple(nn.Module):
         self.y_column = y_column
         self.criterion_soc = torch.nn.MSELoss(reduction='mean')
         self.linear1 = nn.Sequential(
-            nn.Linear(input_size, 10),
+            nn.Linear(input_size, 30),
             nn.LeakyReLU(),
-            nn.Linear(10, 1)
+            nn.Linear(30, 1)
         )
 
     def forward(self, x, soc):
