@@ -12,5 +12,5 @@ if __name__ == "__main__":
         spec_utils.get_wavelengths() + ["savi1"]
     ]
     algorithms = ["ann_simple"]
-    c = Evaluator(prefix="test2", folds=10, algorithms=algorithms, column_groups=column_groups)
+    c = Evaluator(prefix="test", folds=10, algorithms=algorithms, column_groups=column_groups)
     c.process()
