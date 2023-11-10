@@ -3,6 +3,8 @@ import spec_utils
 
 if __name__ == "__main__":
     column_groups = [
+        ["savi"],
+        ["sav2"],
         spec_utils.get_wavelengths(),
         spec_utils.get_wavelengths() + ["savi"],
         spec_utils.get_wavelengths() + ["savi2"]
