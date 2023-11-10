@@ -9,10 +9,10 @@ import numpy as np
 
 
 class DSManager:
-    def __init__(self, folds=10, X_columns=None, y_column="oc"):
+    def __init__(self, folds=10, X_columns=None, y_column="som"):
         cols_to_remove = ["id", "lc1", "lu1"]
         cols_cat = ["lc1", "lu1"]
-        cols_props = ["phh", "phc", "ec", "caco3", "p", "n", "k", "elevation", "stones", "oc"]
+        cols_props = ["phh", "phc", "ec", "caco3", "p", "n", "k", "elevation", "stones", "som"]
         cols_wavelengths = spec_utils.get_wavelengths()
 
         torch.manual_seed(0)

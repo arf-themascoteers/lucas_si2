@@ -14,9 +14,9 @@ class ANNSAVILearnedOnlyBound(nn.Module):
         self.criterion_soc = torch.nn.MSELoss(reduction='mean')
 
         self.linear1 = nn.Sequential(
-            nn.Linear(1, 30),
+            nn.Linear(1, 10),
             nn.LeakyReLU(),
-            nn.Linear(30, 1)
+            nn.Linear(10, 1)
         )
 
         self.alpha = 1000
@@ -34,8 +34,8 @@ class ANNSAVILearnedOnlyBound(nn.Module):
         return soc_hat, savi_hat, loss
 
     def savi(self,x):
-        nir_index = self.X_columns.index("vnir4")
-        red_index = self.X_columns.index("red")
+        nir_index = self.X_columns.index("B08")
+        red_index = self.X_columns.index("B04")
         nir = x[:,nir_index]
         red = x[:,red_index]
         s = (nir - red) / (nir + red + self.L) * (1 + self.L)

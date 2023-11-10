@@ -3,7 +3,7 @@ import spec_utils
 
 if __name__ == "__main__":
     column_groups = [
-        ["red","vnir4"]
+        ["B04","B08"]
     ]
     algorithms = ["ann_savi_learned_only_bound"]
     c = Evaluator(prefix="ann_savi_learned_only_bound2", folds=10, algorithms=algorithms, column_groups=column_groups)
