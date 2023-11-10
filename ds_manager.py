@@ -56,13 +56,18 @@ class DSManager:
         return data
 
     def derive(self, df, si):
-        if si == "savi":
+        if si == "savi0":
+            L = 0
+            nir = df["B08"]
+            red = df["B04"]
+            return (nir - red) / (nir + red + L) * (1 + L)
+        elif si == "savi0.5":
             L = 0.5
             nir = df["B08"]
             red = df["B04"]
             return (nir - red) / (nir + red + L) * (1 + L)
-        elif si == "savi2":
-            L = 0
+        elif si == "savi1":
+            L = 1
             nir = df["B08"]
             red = df["B04"]
             return (nir - red) / (nir + red + L) * (1 + L)
